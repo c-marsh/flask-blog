@@ -40,11 +40,13 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-            if form.email.data == "cmhilfiker@gmail.com" and form.password.data == "password":
-                flash("You've been successfully logged in!", "success")
-                return redirect (url_for("home"))
-            else:
-                flash ("Login failed, please check your email and password.", "danger")
+        """Line cannot be broken"""
+        if form.email.data == "cmhilfiker@gmail.com" and form.password.data == "password":
+            flash("You've been successfully logged in!", "success")
+            return redirect(url_for("home"))
+        else:
+            flash("Login failed, please check your email and password.",
+                  "danger")
     return render_template("login.html", title="Log-in", form=form)
 
 
